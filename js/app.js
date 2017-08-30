@@ -9,6 +9,8 @@ var loadRestaurant = function () {
   $.getJSON(url, function (response) {
     response.forEach(function (data) {
       var name = data.name;
+      var rating = data.rating;
+      console.log(rating)
       //console.log(name)
       array.push(name)
       array.sort();
@@ -31,17 +33,18 @@ var templateRestaurant =
           '<a href="#"> + 55 55 55 55 55</a>'+
         '</li>'+
     '</ul>'+
-    '<p><b>Calificación: </b><span class="uk-icon-button uk-margin-small-right" uk-icon="icon: star; ratio: 1"></span>5</p>';
+    '<p><b>Calificación: </b><span class="uk-icon-button uk-margin-small-right" uk-icon="icon: star; ratio: 1"></span>__rating__</p>';
 
 var showRestaurant = function (restaurants) {
 
      var container = $("#info-restaurant");
      var name = restaurants.name;
+     var rating = restaurants.rating;
      var templateFinal = "";
      //console.log(name)
-     templateFinal += templateRestaurant.replace("__name__", name)
-     container.html (templateFinal);
-     console.log(templateFinal)
+     templateFinal += templateRestaurant.replace("__name__", name).replace("__rating__", rating)
+     container.html(templateFinal);
+     //console.log(templateFinal)
 
 }
 
