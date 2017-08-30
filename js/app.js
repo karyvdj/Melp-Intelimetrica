@@ -13,12 +13,11 @@ var loadRestaurant = function () {
       array.push(name)
       array.sort();
       //console.log(array)
-      showRestaurant(name)
-
+     showRestaurant(data);
     })
   })
 };
-var templeteRestaurant =
+var templateRestaurant =
     '<h3 class="uk-card-title">__name__</h3>'+
     '<p><b>Dirección:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>'+
     '<p><b>Reservación:</b></p>'+
@@ -35,13 +34,15 @@ var templeteRestaurant =
     '<p><b>Calificación: </b><span class="uk-icon-button uk-margin-small-right" uk-icon="icon: star; ratio: 1"></span>5</p>';
 
 var showRestaurant = function (restaurants) {
-  restaurants.forEach(function (restaurant) {
-     var container = $("#info-restaurant");
-     var name = restaurant.name;
 
-     var templeteFinal = templeteRestaurant.replace("__name__", name)
-     container.innerHTML += templeteFinal;
-  });
+     var container = $("#info-restaurant");
+     var name = restaurants.name;
+     var templateFinal = "";
+     //console.log(name)
+     templateFinal += templateRestaurant.replace("__name__", name)
+     container.html (templateFinal);
+     console.log(templateFinal)
+
 }
 
 $(document).ready(loadPage);
