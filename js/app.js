@@ -9,35 +9,39 @@ var loadRestaurant = function () {
   $.getJSON(url, function (response) {
     response.forEach(function (data) {
       var name = data.name;
-      console.log(name)
+      //console.log(name)
       array.push(name)
       array.sort();
+      //console.log(array)
       showRestaurant(name)
+
     })
   })
 };
+var templeteRestaurant =
+    '<h3 class="uk-card-title">__name__</h3>'+
+    '<p><b>Dirección:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>'+
+    '<p><b>Reservación:</b></p>'+
+    '<ul>'+
+        '<li>'+
+          '<span class="uk-icon-button uk-margin-small-right" uk-icon="icon: mail; ratio: 1"></span>'+
+          '<a href="#"> correo@gmail.com</a>'+
+        '</li>'+
+        '<li>'+
+          '<span class="uk-icon-button uk-margin-small-right" uk-icon="icon: phone; ratio: 1"></span>'+
+          '<a href="#"> + 55 55 55 55 55</a>'+
+        '</li>'+
+    '</ul>'+
+    '<p><b>Calificación: </b><span class="uk-icon-button uk-margin-small-right" uk-icon="icon: star; ratio: 1"></span>5</p>';
 
+var showRestaurant = function (restaurants) {
+  restaurants.forEach(function (restaurant) {
+     var container = $("#info-restaurant");
+     var name = restaurant.name;
 
-
-
-$(document).ready(loadPage);
-
-
-/*var request = new XMLHttpRequest();
-//console.log(request)
-request.open("GET", url);
-request.onload =function() {
-  var info = JSON.parse(request.responseText);
-  info.forEach(function (response) {
-    var name = response.name;
-    console.log(name)
-    array.push(name)
-    array.sort();
+     var templeteFinal = templeteRestaurant.replace("__name__", name)
+     container.innerHTML += templeteFinal;
   });
 }
-  array.forEach(function(name){
-    var arrayName = [];
-    arrayName.push(name);
-  //showRestaurant(arrayName);
-});
-request.send();*/
+
+$(document).ready(loadPage);
