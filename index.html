@@ -5,13 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>MELP</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.25/css/uikit.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
   </head>
-  <body>
+  <body class="uk-background-center-center uk-background-cover uk-height-viewport">
+    <nav class="uk-navbar-container uk-margin uk-padding uk-navbar-transparent" uk-navbar uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+        <div class="uk-navbar-left">
+            <a href="#" class="uk-navbar-item uk-logo">
+              <img class="img-logo" src="assets/img/melp.svg" alt="logo">
+            </a>
+        </div>
+        <div class="uk-navbar-right">
+          <div>
+              <a class="uk-navbar-toggle" uk-search-icon="ratio: 2" href="#"></a>
+              <div class="uk-drop" uk-drop="mode: click; pos: left-center; offset: 0">
+                  <form class="uk-search uk-search-navbar uk-width-1-1@m">
+                      <input class="uk-search-input" type="search" placeholder="Nuevos sabores..." autofocus>
+                  </form>
+              </div>
+          </div>
+        </div>
+    </nav>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.js"></script>
+    <section class="uk-padding-large uk-container">
+      <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+          <div class="uk-card-media-left uk-cover-container">
+              <img src="assets/img/restaurant.jpg" alt="" uk-cover>
+              <canvas height="200"></canvas>
+          </div>
+          <div>
+            <div class="uk-card-body">
+                <h4 class="uk-card-title">Restaurante</h4>
+                <p><b>Dirección:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <p><b>Reservación:</b></p>
+                <ul>
+                    <li>
+                      <span class="uk-icon-button uk-margin-small-right" uk-icon="icon: mail; ratio: 1"></span>
+                      <a href="#"> correo@gmail.com</a>
+                    </li>
+                    <li>
+                      <span class="uk-icon-button uk-margin-small-right" uk-icon="icon: phone; ratio: 1"></span>
+                      <a href="#"> + 55 55 55 55 55</a>
+                    </li>
+                </ul>
+                <p><b>Calificación: </b><span class="uk-icon-button uk-margin-small-right" uk-icon="icon: star; ratio: 1"></span>5</p>
+            </div>
+          </div>
+      </div>
+    </section>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.25/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.25/js/uikit-icons.min.js"></script>
   	<script src="js/app.js"></script>
   </body>
 </html>

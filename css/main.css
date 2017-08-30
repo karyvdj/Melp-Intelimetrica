@@ -1,0 +1,10 @@
+body{
+  font-family: 'Roboto', sans-serif;
+  color: #485465;
+  font-size: 16px;
+  letter-spacing: -0.1px;
+  background-image: url(../assets/img/fondo.jpg);
+}
+.img-logo{
+  width: 70%;
+}
