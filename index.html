@@ -17,7 +17,7 @@
             </a>
         </div>
         <div class="uk-navbar-right">
-          <div>
+          <div class="uk-visible@m">
               <a class="uk-navbar-toggle" uk-search-icon="ratio: 2" href="#"></a>
               <div class="uk-drop" uk-drop="mode: click; pos: left-center; offset: 0">
                   <form class="uk-search uk-search-navbar uk-width-1-1@m">
@@ -29,14 +29,17 @@
     </nav>
 
     <section class="uk-padding-large uk-container">
+      <div class="uk-heading-line">
+        <h1 class="title">Sabor de la A - Z</h1>
+      </div>
       <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
           <div class="uk-card-media-left uk-cover-container">
               <img src="assets/img/restaurant.jpg" alt="" uk-cover>
               <canvas height="200"></canvas>
           </div>
           <div>
-            <div class="uk-card-body">
-                <h4 class="uk-card-title">Restaurante</h4>
+            <div class="uk-card-body" id="info-restaurant">
+                <h3 class="uk-card-title">Restaurante</h3>
                 <p><b>Dirección:</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 <p><b>Reservación:</b></p>
                 <ul>
